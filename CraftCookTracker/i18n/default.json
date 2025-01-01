@@ -1,0 +1,19 @@
+﻿{
+  // recipe count display
+  "recipe.made": "Made",
+  "recipe.not-made": "Not made",
+
+  // unmade recipes display
+  "crafting.uncooked": "Uncooked recipes",
+  "crafting.uncrafted": "Uncrafted items",
+  "crafting.required-ingredients": "Required ingredients",
+  "crafting.ghosted": "recipe locked",
+
+  // required materials
+  "material.any": "any",
+  "material.egg": "egg",
+  "material.milk": "milk",
+  "materail.wild-seeds":  "wild seeds",
+  "material.require": "require",
+  "material.prepared": "prepared"
+}

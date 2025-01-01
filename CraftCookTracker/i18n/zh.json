@@ -1,0 +1,19 @@
+﻿{
+  // recipe count display
+  "recipe.made": "已制作",
+  "recipe.not-made": "未制作",
+
+  // unmade recipes display
+  "crafting.uncooked": "未烹饪菜肴",
+  "crafting.uncrafted": "未制作物品",
+  "crafting.required-ingredients": "所需原料",
+  "crafting.ghosted": "配方未解锁",
+
+  // required materials
+  "material.any": "任意",
+  "material.egg": "蛋",
+  "material.milk": "奶",
+  "materail.wild-seeds": "野生种子",
+  "material.require": "需要",
+  "material.prepared": "已备"
+}
