@@ -1,4 +1,8 @@
 ﻿{
+  // mod config display
+  "modconfig.show-recipe-list": "Show recipe list",
+  "modconfig.show-recipe-list-tip": "Show uncrafted/uncooked recipes and their materials",
+
   // recipe count display
   "recipe.made": "Made",
   "recipe.not-made": "Not made",
@@ -13,7 +17,7 @@
   "material.any": "any",
   "material.egg": "egg",
   "material.milk": "milk",
-  "materail.wild-seeds":  "wild seeds",
+  "materail.wild-seeds": "wild seeds",
   "material.require": "require",
   "material.prepared": "prepared"
 }

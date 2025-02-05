@@ -1,7 +1,7 @@
 ﻿{
   "Name": "CraftCook Tracker",
   "Author": "Cactusan",
-  "Version": "1.0.0",
+  "Version": "1.1.0",
   "Description": "Track materials for 100% crafting and cooking achievements",
   "UniqueID": "Cactusan.CraftCookTracker",
   "EntryDll": "CraftCookTracker.dll",

@@ -1,4 +1,8 @@
 ﻿{
+  // mod config display
+  "modconfig.show-recipe-list": "显示配方清单",
+  "modconfig.show-recipe-list-tip": "显示未制作配方/未烹饪菜肴，及相关配料",
+
   // recipe count display
   "recipe.made": "已制作",
   "recipe.not-made": "未制作",
