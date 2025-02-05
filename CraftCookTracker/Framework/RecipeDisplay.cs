@@ -31,10 +31,7 @@ namespace CraftCookTracker.Framework
 
                 // display product count
                 string productCountText = productCount == 0 ? I18n.Recipe_NotMade() : $"{I18n.Recipe_Made()}: {productCount}";
-                if (OriginalDescription == string.Empty)
-                {
-                    OriginalDescription = craftingPage.hoverRecipe.description;
-                }
+                OriginalDescription = craftingPage.hoverRecipe.description.Split('\n')[0];
                 craftingPage.hoverRecipe.description = OriginalDescription + $"\n{productCountText}";
             }
         }
