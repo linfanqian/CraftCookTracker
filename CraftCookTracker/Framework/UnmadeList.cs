@@ -68,6 +68,7 @@ namespace CraftCookTracker.Framework
             else
             {
                 HandleCookingProducts();
+                CheckBagInventory();
                 ShowingCooking = true;
             }
 
@@ -88,11 +89,13 @@ namespace CraftCookTracker.Framework
                 if (ShowingCooking)
                 { 
                     HandleCraftingProducts();
+                    CheckBagInventory();
                     ShowingCooking = false;
                 }
                 else
                 {
                     HandleCookingProducts();
+                    CheckBagInventory();
                     ShowingCooking = true;
                 }
             }
@@ -329,6 +332,20 @@ namespace CraftCookTracker.Framework
             }
         }
 
+        /// <summary>Check and add ingredient inventories from bag.</summary>
+        private void CheckBagInventory()
+        {
+            foreach (Item item in Game1.player.Items)
+            {
+                if (item != null)
+                {
+                    string itemUnqualifiedId = item.ItemId;
+                    int quantity = item.Stack;
+                    AddIngredientInventory(itemUnqualifiedId, quantity);
+                }
+            }
+        }
+
         /// <summary>Check and add cooking ingredient inventories.</summary>
         private void CheckCookingInventory()
         {
@@ -376,15 +393,9 @@ namespace CraftCookTracker.Framework
 
                 }
             }
-            foreach (Item item in Game1.player.Items)
-            {
-                if (item != null)
-                {
-                    string itemUnqualifiedId = item.ItemId;
-                    int quantity = item.Stack;
-                    AddIngredientInventory(itemUnqualifiedId, quantity);
-                }
-            }
+
+            // check items from bag
+            CheckBagInventory();
         }
 
         /// <summary>Check and add crafting ingredient inventories.</summary>
@@ -443,15 +454,8 @@ namespace CraftCookTracker.Framework
 
                 }
             }
-            foreach (Item item in Game1.player.Items)
-            {
-                if (item != null)
-                {
-                    string itemQualifiedId = item.QualifiedItemId;
-                    int quantity = item.Stack;
-                    AddIngredientInventory(itemQualifiedId, quantity);
-                }
-            }
+            // check items from bag
+            CheckBagInventory();
         }
 
         /// <summary>Add quantity into inventory if the ingredient is required.</summary>
