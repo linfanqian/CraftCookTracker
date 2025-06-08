@@ -332,6 +332,23 @@ namespace CraftCookTracker.Framework
             }
         }
 
+        /// <summary>Return category id. 
+        /// Useful for 'any'-type ingredients like eggs.</summary>
+        private string GetItemCategoryId(Item item)
+        {
+            // 'Any' type categories in use:
+            // -4 fish; -5 egg; -6 milk; -777 wild seed
+            if (item is SObject obj)
+            {
+                if (obj.Category < 0)
+                    return obj.Category.ToString();
+                else
+                    return string.Empty;
+            }
+
+            return string.Empty;
+        }
+
         /// <summary>Check and add ingredient inventories from bag.</summary>
         private void CheckBagInventory()
         {
@@ -339,9 +356,15 @@ namespace CraftCookTracker.Framework
             {
                 if (item != null)
                 {
-                    string itemUnqualifiedId = item.ItemId;
+                    string itemId = item.ItemId;
+                    string categoryId = GetItemCategoryId(item);
                     int quantity = item.Stack;
-                    AddIngredientInventory(itemUnqualifiedId, quantity);
+                    AddIngredientInventory(itemId, quantity);
+                    if (categoryId != string.Empty)
+                    {
+                        // Item belongs to an 'any' type
+                        AddIngredientInventory(categoryId, quantity);
+                    }
                 }
             }
         }
@@ -386,9 +409,15 @@ namespace CraftCookTracker.Framework
                 {
                     if (item != null)
                     {
-                        string itemUnqualifiedId = item.ItemId;
+                        string itemId = item.ItemId;
+                        string categoryId = GetItemCategoryId(item);
                         int quantity = item.Stack;
-                        AddIngredientInventory(itemUnqualifiedId, quantity);
+                        AddIngredientInventory(itemId, quantity);
+                        if (categoryId != string.Empty)
+                        {
+                            // Item belongs to an 'any' type
+                            AddIngredientInventory(categoryId, quantity);
+                        }
                     }
 
                 }
@@ -448,8 +477,14 @@ namespace CraftCookTracker.Framework
                     if (item != null)
                     {
                         string itemUnqualifiedId = item.ItemId;
+                        string categoryId = GetItemCategoryId(item);
                         int quantity = item.Stack;
                         AddIngredientInventory(itemUnqualifiedId, quantity);
+                        if (categoryId != string.Empty)
+                        {
+                            // Item belongs to an 'any' type
+                            AddIngredientInventory(categoryId, quantity);
+                        }
                     }
 
                 }
