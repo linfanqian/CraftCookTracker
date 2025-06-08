@@ -1,0 +1,16 @@
+{
+    "modconfig.show-recipe-list": "Afficher la liste des recettes",
+    "modconfig.show-recipe-list-tip": "Afficher les recettes non réalisées / non cuites et leurs matériaux",
+    "recipe.made": "Fait",
+    "recipe.not-made": "Pas fait",
+    "crafting.uncooked": "Recettes non cuites",
+    "crafting.uncrafted": "Articles non réalisés",
+    "crafting.required-ingredients": "Ingrédients requis",
+    "crafting.ghosted": "recette verrouillée",
+    "material.any": "n'importe lequel",
+    "material.egg": "œuf",
+    "material.milk": "lait",
+    "materail.wild-seeds": "graines sauvages",
+    "material.require": "exiger",
+    "material.prepared": "préparé"
+}
